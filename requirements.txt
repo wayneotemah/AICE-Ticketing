@@ -1,0 +1,10 @@
+# Django Web packages
+django
+django-daraja
+djangorestframework
+markdown
+django-filter
+django-cors-headers
+django_daraja
+python-dotenv
+whitenoise
