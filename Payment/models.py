@@ -11,7 +11,7 @@ class Client(models.Model):
     company = models.CharField(max_length=100)
 
     def __str__(self):
-        return self.email
+        return f"{self.email}"
 
 
 class Payment(models.Model):
@@ -21,4 +21,4 @@ class Payment(models.Model):
     time = models.TimeField(auto_now=True)
 
     def __str__(self):
-        return self.name
+        return f"{self.client}"

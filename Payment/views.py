@@ -8,14 +8,14 @@ class ClientViewSet(viewsets.ViewSet):
     queryset = Client.objects.all()
     serializer_class = ClientSerializer
     
-    def post(self,request):
-        # serializer = ClientSerializer(data=request.data)
-        if self.serializer.is_valid():
-            self.serializer.save()
-            return Response(self.serializer.data,status=status.HTTP_201_CREATED)
-        return Response(self.serializer.errors,status=status.HTTP_400_BAD_REQUEST)
+    def create(self,request):
+        serializer = self.serializer_class(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data,status=status.HTTP_201_CREATED)
+        return Response(serializer.errors,status=status.HTTP_400_BAD_REQUEST)
     
-    def  get(self,request):
+    def  list(self,request):
         clients = self.queryset.all()
         serializer = self.serializer_class(clients,many=True)
         return Response(serializer.data)
@@ -25,14 +25,14 @@ class PaymentViewSet(viewsets.ViewSet):
     queryset = Payment.objects.all()
     serializer_class = PaymentSerializer
     
-    def post(self,request):
-        # serializer = PaymentSerializer(data=request.data)
-        if self.serializer.is_valid():
-            self.serializer.save()
-            return Response(self.serializer.data,status=status.HTTP_201_CREATED)
-        return Response(self.serializer.errors,status=status.HTTP_400_BAD_REQUEST)
+    def create(self,request):
+        serializer = self.serializer_class(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data,status=status.HTTP_201_CREATED)
+        return Response(serializer.errors,status=status.HTTP_400_BAD_REQUEST)
     
-    def  get(self,request):
+    def  list(self,request):
         payments = self.queryset.all()
         serializer = self.serializer_class(payments,many=True)
         return Response(serializer.data)
