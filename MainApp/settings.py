@@ -36,6 +36,15 @@ CORS_ALLOWED_ORIGINS = [
     "https://kata-training-payment.vercel.app",
 ]
 
+CORS_ALLOW_CREDENTIALS = False
+
+CORS_ORIGING_WHITELIST = [
+    "http://localhost:3000",
+    'https://mwisechacha.pythonanywhere.com',
+    "https://kata-training-payment.vercel.app",
+    "https://kata-training-payment.vercel.app",
+]
+
 SECURE_CROSS_ORIGIN_OPENER_POLICY = None
 
 CSRF_TRUSTED_ORIGINS = [
@@ -66,6 +75,13 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     "whitenoise.middleware.WhiteNoiseMiddleware",
+]
+
+# CORS Headers settings
+CORS_ALLOW_HEADERS = [
+    'content-type',
+    'x-csrftoken',
+    'authorization',
 ]
 
 ROOT_URLCONF = 'MainApp.urls'

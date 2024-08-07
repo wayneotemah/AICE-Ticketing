@@ -4,6 +4,8 @@ from .serializers import ClientSerializer,PaymentSerializer
 from .models import Client,Payment
 # Create your views here.
 
+
+
 class ClientViewSet(viewsets.ViewSet):
     queryset = Client.objects.all()
     serializer_class = ClientSerializer
