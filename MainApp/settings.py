@@ -28,24 +28,11 @@ DEBUG = True
 ALLOWED_HOSTS = ["*"]
 
 # CORS settings
-CORS_ORIGIN_ALLOW_ALL = False
-
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",
-    'https://mwisechacha.pythonanywhere.com',
-    "https://kata-training-payment.vercel.app",
-]
-
-CORS_ALLOW_CREDENTIALS = False
-
-CORS_ORIGING_WHITELIST = [
-    "http://localhost:3000",
-    'https://mwisechacha.pythonanywhere.com',
-    "https://kata-training-payment.vercel.app",
-    "https://kata-training-payment.vercel.app",
-]
+CORS_ORIGIN_ALLOW_ALL = True
 
 SECURE_CROSS_ORIGIN_OPENER_POLICY = None
+
+CORS_ALLOW_CREDENTIALS = False
 
 CSRF_TRUSTED_ORIGINS = [
     "https://kata-training-payment.vercel.app",
