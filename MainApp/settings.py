@@ -27,7 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
-CORS_ORIGIN_ALLOW_ALL = True
+# CORS settings
+CORS_ORIGIN_ALLOW_ALL = False
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
@@ -38,11 +39,8 @@ CORS_ALLOWED_ORIGINS = [
 SECURE_CROSS_ORIGIN_OPENER_POLICY = None
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://kata-training-payment.vercel.app"
-#     "http://localhost:3000/",
-    ]
-
-
+    "https://kata-training-payment.vercel.app",
+]
 
 # Application definition
 INSTALLED_APPS = [
