@@ -4,11 +4,11 @@ from .models import Payment,Client
 
 
 class ClientAdmin(admin.ModelAdmin):
-    list_display = ['name','email','phone_number','company']
+    list_display = ['name','email','phone_number','company','transaction_code','date','time']
     search_fields = ['name','email','phone_number','company']
 
 class PaymentAdmin(admin.ModelAdmin):
-    list_display = ['client','Trasaction_code','date','time']
+    list_display = ['client','transaction_code','date','time']
     search_fields = ['Trasaction_code','date','time']
     list_filter = ['date','time']
     

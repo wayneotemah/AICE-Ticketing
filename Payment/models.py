@@ -6,9 +6,12 @@ from django.db import models
 class Client(models.Model):
     user_id  = models.AutoField(primary_key=True)   
     name = models.CharField(max_length=100)
-    email = models.EmailField(unique=True)
+    email = models.EmailField()
     phone_number = models.CharField(max_length=100)
     company = models.CharField(max_length=100)
+    transaction_code = models.CharField(unique=True,max_length=100)
+    date = models.DateField(auto_now=True)
+    time = models.TimeField(auto_now=True)
 
     def __str__(self):
         return f"{self.email}"
@@ -16,7 +19,7 @@ class Client(models.Model):
 
 class Payment(models.Model):
     client = models.ForeignKey(Client,on_delete=models.CASCADE)
-    Trasaction_code = models.CharField(unique=True,max_length=100)
+    transaction_code = models.CharField(unique=True,max_length=100)
     date = models.DateField(auto_now=True)
     time = models.TimeField(auto_now=True)
 

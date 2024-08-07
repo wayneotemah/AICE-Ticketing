@@ -10,5 +10,5 @@ class PaymentSerializer(serializers.ModelSerializer):
 class ClientSerializer(serializers.ModelSerializer):
     class Meta:
         model = Client
-        fields = "__all__"
+        fields = ["name","email","phone_number","company","transaction_code"]
         extra_kwargs = {"user_id": {"read_only": True}}

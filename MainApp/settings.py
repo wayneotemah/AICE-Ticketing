@@ -30,15 +30,17 @@ ALLOWED_HOSTS = ["*"]
 CORS_ORIGIN_ALLOW_ALL = True
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000/",
+    "http://localhost:3000",
     'https://mwisechacha.pythonanywhere.com',
+    "https://kata-training-payment.vercel.app",
 ]
 
 SECURE_CROSS_ORIGIN_OPENER_POLICY = None
 
-# CSRF_TRUSTED_ORIGINS = [
+CSRF_TRUSTED_ORIGINS = [
+    "https://kata-training-payment.vercel.app"
 #     "http://localhost:3000/",
-#     ]
+    ]
 
 
 
